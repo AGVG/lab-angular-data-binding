@@ -1,0 +1,14 @@
+<div>
+  <label for="searcher"> Search foods: </label>
+  <input id="searcher" placeholder="food name" type="text" [(ngModel)]="pattern">
+<div>
+
+
+<ul>
+  <li *ngFor="let food of foods  | filter:'name':pattern; let i = index ">
+    {{ i + 1}}
+    <p> {{food.name}} </p>
+    <p>{{food.calories}} </p>
+    <p><img [src]="food.image"></p>
+  </li>
+</ul>
